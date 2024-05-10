@@ -1,4 +1,4 @@
-
+import java.util.Arrays;
 import java.util.Scanner;
 public class Characters{
 	public static void main(String...plays){
@@ -28,9 +28,8 @@ public class Characters{
 		System.out.println("Enter boxnumber:");
 		int box = input.nextInt();
 		if (user == 6 && user == 10){
-			System.out.print("valid input");
-				break;
-		
+		System.out.print("valid input");
+			break;
 		if(box == 1){
 			box1[0] = user;
 			}
@@ -64,4 +63,5 @@ public class Characters{
 	            }	
 
                  }
+}
 }
