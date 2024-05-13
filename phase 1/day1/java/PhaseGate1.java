@@ -1,16 +1,14 @@
 import java.util.*;
 	public class PhaseGate1{
 	public static void main(String...phaseGate){
-	Scanner input = new Scanner(System.in);
+	Scanner input = new Scanner(Systen.in);
 	
-	int sum = 0;
-	for(int index = 0; index < 10; index++){
-	System.out.println("Enter your scores");
-	int scores = input.nextInt();
-	 sum += scores;
+	count = 0;
+	int[] numbers = new int [10 ];
+	for(int index = 0; index < numbers.length; index++){
+	System.out.println("Enter scores");
+	numbers = input.nextInt();
 		}
-	System.out.println("The total sum is: " + sum);
-	
-			}
-
-	}
+		System.out.println(numbers[index]);
+ 	}
+   }

@@ -17,4 +17,9 @@ if array_length % 4 == 0:
 	print("Card numbers are valid")
 elif:
 	print("Entered card is invalid")
+result = 0;
+	for index in range(len(numbers)):
+numbers = integer.parseInt(String.valueof(Numbers.charAt(index)))*2;
+result += numbers
+
 	
