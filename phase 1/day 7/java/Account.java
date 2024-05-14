@@ -26,6 +26,16 @@ public class Account{
 	              String secondName = input.next();
                    case 3: System.out.print("Enter Your Last Name:");
 	              String lastName = input.next();
+	case 4: System.out.print("Create your transfer pin:");
+	              int  bankPin = input.nextInt();
+		if(bankPin == 6){
+		         System.out.println("Please enter a valid pin, Pin must be up to 6");
+		        	 }
+		else{
+		    System.out.println("Your tranaction was succesfully created");
+			}break;
+		System.out.println("Please do not share your pin as we will not ask for it");break;
+		
 	System.out.println("=".repeat(100));
 	System.out.println("""
 		You are almost done creating  
@@ -38,7 +48,13 @@ public class Account{
 	          1. SAVINGS
 	          2. CORRENT
 	          3. CREDIT
+	          4. INVESTING ACCOUNT
 	                 """;
+	System.out.println("=".repeat(100));
+	System.out.print(PickAccount);
+	int accountOptions = input.nextInt();
+	System.out.println("=".repeat(100));
+	switch(accountOptions){
 
 	//Account giveAccount1 = new Account("Smart Sunday", 10.000);
 	//Account giveAccount2 = new Account("Mr chi",  -1.500);
@@ -51,6 +67,7 @@ public class Account{
 
 	//System.out.printf(%nadding %2.f to account balance%n%n", deposit);
 
+			}
+		}
 	}
-}
 }
