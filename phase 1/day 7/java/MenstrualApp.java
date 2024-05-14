@@ -29,13 +29,13 @@ public class MenstrualApp{
 			System.out.println("""
 				Please Enter the average duration
 				 of your period that you can remember in days:""");
-				periodLength = input.nextInt();
+  				periodLength = input.nextInt();
 
-			System.out.println("=".repeat(100));
+  			System.out.println("=".repeat(100));
 			System.out.printf("""
 				We at  Smart Female Health central says 
 				Thank you for completing the steps provided by us. 
-				Hold on as we process your result
+  				Hold on as we process your result
 						""");
 			int cycleDuration = cycleLength - periodLength;
 			int fertilePhaseStart = cycleDuration / 14;

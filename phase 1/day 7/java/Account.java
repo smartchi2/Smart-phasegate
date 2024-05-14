@@ -1,6 +1,11 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Account{
+	private static List<String> firstNameList = new ArrayList<>();
+	private static List<String> lastNameList = new ArrayList<>();
+	private static List<String> accountTypeList = new ArrayList<>();
+	private static List<Double> balanceList = new ArrayList<>();
+	private static List<Integer> bankPinList = new ArrayList<>();
 	public static void main(String...args){
 	Scanner input = new Scanner(System.in);
 
@@ -21,20 +26,33 @@ public class Account{
 	switch(bankOptions){
 	
 	case 1:  System.out.print("Enter Your First Name:");
-	               String firstName = input.next();
-	case 2: System.out.print("Enter your Second Name:");
-	              String secondName = input.next();
-                   case 3: System.out.print("Enter Your Last Name:");
-	              String lastName = input.next();
+	             String firstName = input.next();
+	             firstNameList.add(firstName);
+
+	case 2: System.out.print("Enter your Last Name:");
+	            String  lastName = input.next();
+	            lastNameList.add(lastName);
+
 	case 4: System.out.print("Create your transfer pin:");
 	              int  bankPin = input.nextInt();
+	              bankPinList.add(bankPin);
+
 		if(bankPin == 6){
-		         System.out.println("Please enter a valid pin, Pin must be up to 6");
-		        	 }
-		else{
-		    System.out.println("Your tranaction was succesfully created");
-			}break;
-		System.out.println("Please do not share your pin as we will not ask for it");break;
+		         System.out.println("Your transfer pin was succesfully created");
+			}
+	                   if(bankPin != 6){
+		        System.out.println("Please enter a valid pin, and pin must be up to 6");
+
+		   System.out.println("Was your pin creation succesful? ");
+		   String response = input.nextLine();
+
+	while(response.equals("yes") || response.equals("YES") || response.equals("Yes")){
+		 System.out.print("Create your transfer pin:");
+	                    int  bankPin = input.nextInt();
+	                    bankPinList.add(bankPin);
+		System.out.println("=".repeat(100));
+		System.out.println("NOTICE.... TO ALL OUR CUSTOMERS AND USERS");
+		System.out.println("Please do not share your pin as we will not ask for it");
 		
 	System.out.println("=".repeat(100));
 	System.out.println("""
@@ -55,19 +73,12 @@ public class Account{
 	int accountOptions = input.nextInt();
 	System.out.println("=".repeat(100));
 	switch(accountOptions){
+	
 
-	//Account giveAccount1 = new Account("Smart Sunday", 10.000);
-	//Account giveAccount2 = new Account("Mr chi",  -1.500);
+			    }
+		   }
+	     }
+         }
+  }
 
-	//System.out.printf("%s balance: $%.2f%n",  givenAccount1(), giveAccount.getBalance());
-	//System.out.printf("%s balance: $%.2f%n%n",givenAccount2.getName//(),giveAccount2.getBalnce());
-
-	///System.out.println("Enter the account you wish to deposit:");
-	//double deposit = input.nextDouble();
-
-	//System.out.printf(%nadding %2.f to account balance%n%n", deposit);
-
-			}
-		}
-	}
 }
