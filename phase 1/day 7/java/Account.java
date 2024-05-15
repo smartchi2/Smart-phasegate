@@ -13,11 +13,11 @@ public class Account{
 	
 	
 	 String userName1 = null;
-	String bankPin1 = null;
+	String bankPin1 = "";
 	printHeader();
 	pickOption();
 	//accountType();
-	System.out.print("choose agtn option  ");
+	System.out.print("choose an option  ");
 	int bankOptions = input.nextInt();
 	System.out.println("=================");
 
@@ -40,21 +40,49 @@ public class Account{
 		bankPin1 = input.nextLine();
 		input.nextLine();
 		bankPin1List.add(bankPin1);
-		if(bankPin1.length() >  6 || bankPin1.length() < 6){
+		while(bankPin1.length() !=  6){
 		System.out.println("Please enter a valid pin, and pin must be up to 6");
-		System.out.println("""
-		      *************** First Name is +  firstName
-		      ************* Last Name is +  lastName
-		      ********** UserName is + userName1
-		      ******* Bank Pin is + bankPin1 
+		System.out.println("Create your transfer pin:");
+		bankPin1 = input.nextLine();
+			}
+		  System.out.println("Your transfer pin was succesfully created");
+		System.out.println("=".repeat(50));
+		 System.out.println("Please wait as we procces your request for you to get your account number!!!!");
+		System.out.print("""
+		 Account Number Section:
+		1 -> Nigeria Account No.
+		2 -> Dollar Accoun No. 
 			""");
-		} else {
-		System.out.println("Your transfer pin was succesfully created");
-		}
+	int generateYourAccountNo = input.nextInt();
+	switch(generateYourAccountNo){
+		case 1:
+			System.out.println("Your new Naira  account is ID54671" + Math.random());  
+			int nigeriaAccountNumber = input.nextInt();
+			
+		case 2:
+			System.out.println("Your new Dollar account number is ID6789" + Math.random());  
+			int dollarAccountNumber = input.nextInt();
+
+			System.out.println("Enter continue to see your registed info: ");
+			String response = input.nextLine();
+		while(response.equals("continue") || response.equals("CONTINUE") || response.equals("Continue")){
+			System.out.println("Your new Naira  account is ID54671" + Math.random());  
+			
+
+			System.out.println("Your new Dollar account number is ID6789" + Math.random());  
+		System.out.println("*************************\n" +
+		  "--------------------------------USER INFO\n" +
+		      "***************  First Name is: " +  firstName + "\n" +
+		                 "*************  Last Name is: " +  lastName + "\n" +
+		                        " **********  UserName is: " + userName1 + "\n" +
+		                                           "*******  Bank Pin is: " + bankPin1 + "\n" +
+				  //"******** Account Number is: " + 
+		                   "***************************************");
 			break;
-	default:   System.out.println("Invalid selection Exiting now as we are still working on it!!!");
-		return;
-	
+			}
+	   defual:	System.out.println("Invalid selection Exiting now as we are still working on it!!!");
+		
+	}
 	case 2:
 		System.out.println("Login.... Enter Details Below:");
 		System.out.println("User Name");
@@ -72,24 +100,7 @@ public class Account{
 	                  }else{
 	                 System.out.println("You have entered an invalid Bank Pin");
 		}
-		 System.out.println("Please wait as we procces your request for you to get your account number!!!!");
-		System.out.print("""
-		generateYourAccountNo:
-		1 -> Nigeria Account No.
-		2 -> Dollar Accoun No. 
-			""");
-	int generateYourAccountNo = input.nextInt();
-	switch(generateYourAccountNo){
-		case 1:
-			System.out.print("Your new Naira  account is ID54671" + Math.random());  
-			int nigeriaAccountNumber = input.nextInt();
-
-		case 2:
-			System.out.print("Your new Dollar account number is ID6789" + Math.random());  
-			int dollarAccountNumber = input.nextInt();
-		default:
-			System.out.print("Please hold on as we are having network issue");
-			}
+		
 
 	
 			    }

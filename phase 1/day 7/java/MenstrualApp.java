@@ -21,14 +21,10 @@ public class MenstrualApp{
 				see options.""");
 			System.out.println("=".repeat(100));
 
-			System.out.println("""
-			Please enter the average length of your menstrual 
-			cycle that you can remember in days: """);
+			System.out.println("Please Enter  when you  had  your last period, that you can remember in days:");
 			cycleLength = input.nextInt();
 
-			System.out.println("""
-				Please Enter the average duration
-				 of your period that you can remember in days:""");
+			System.out.println("How many days does it last:");
   				periodLength = input.nextInt();
 
   			System.out.println("=".repeat(100));
