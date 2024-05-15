@@ -12,15 +12,21 @@ public class Account{
 	ArrayList<String> bankPin1List = new ArrayList<>();
 	
 	
-	 String userName1 = null;
+	 String userName1 = "";
 	String bankPin1 = "";
+	String response ="";
+	String Yes = "";
+	int nigeriaAccountNumber = 0;
+	int dollarAccountNumber = 0;
 	printHeader();
 	pickOption();
-	//accountType();
+                     
+                  //accountType();
 	System.out.print("choose an option  ");
 	int bankOptions = input.nextInt();
-	System.out.println("=================");
-
+	System.out.println("=".repeat(20));
+          
+	
 	switch(bankOptions){
 	
 	case 1: 
@@ -46,9 +52,9 @@ public class Account{
 		bankPin1 = input.nextLine();
 			}
 		  System.out.println("Your transfer pin was succesfully created");
-		System.out.println("=".repeat(50));
+		 System.out.println("=".repeat(50));
 		 System.out.println("Please wait as we procces your request for you to get your account number!!!!");
-		System.out.print("""
+		 System.out.print("""
 		 Account Number Section:
 		1 -> Nigeria Account No.
 		2 -> Dollar Accoun No. 
@@ -56,33 +62,14 @@ public class Account{
 	int generateYourAccountNo = input.nextInt();
 	switch(generateYourAccountNo){
 		case 1:
-			System.out.println("Your new Naira  account is ID54671" + Math.random());  
-			int nigeriaAccountNumber = input.nextInt();
+			System.out.println("Your new Naira  account is  number ID54671" + Math.random());  
+			nigeriaAccountNumber = input.nextInt();
 			
-		case 2:
-			System.out.println("Your new Dollar account number is ID6789" + Math.random());  
-			int dollarAccountNumber = input.nextInt();
-
-			System.out.println("Enter continue to see your registed info: ");
-			String response = input.nextLine();
-		while(response.equals("continue") || response.equals("CONTINUE") || response.equals("Continue")){
-			System.out.println("Your new Naira  account is ID54671" + Math.random());  
-			
-
-			System.out.println("Your new Dollar account number is ID6789" + Math.random());  
-		System.out.println("*************************\n" +
-		  "--------------------------------USER INFO\n" +
-		      "***************  First Name is: " +  firstName + "\n" +
-		                 "*************  Last Name is: " +  lastName + "\n" +
-		                        " **********  UserName is: " + userName1 + "\n" +
-		                                           "*******  Bank Pin is: " + bankPin1 + "\n" +
-				  //"******** Account Number is: " + 
-		                   "***************************************");
-			break;
-			}
-	   defual:	System.out.println("Invalid selection Exiting now as we are still working on it!!!");
 		
-	}
+			System.out.println("Your new Dollar account number is ID6789" + Math.random());  
+			dollarAccountNumber = input.nextInt();
+	                   		break;
+		
 	case 2:
 		System.out.println("Login.... Enter Details Below:");
 		System.out.println("User Name");
@@ -98,26 +85,55 @@ public class Account{
 		if(accountPin == bankPin1){
 		System.out.println("Login Successful");
 	                  }else{
-	                 System.out.println("You have entered an invalid Bank Pin");
 		}
+	          defualt: System.out.println("You have entered an invalid Bank Pin");
 		
-
+	case 3:
+		System.out.println("Are you sure you want to delete your account?:");
+		String closeAccount = input.nextLine();
+		while(closeAccount != Yes){
+		System.out.println("Are you sure you want to delete your account?:");
+		System.out.println("Account was successfully deleted");
+		//}else{
+	                   // System.out.println("You can continue using our great App");
+		break;
+		}
+		defualt: System.out.println("Seems like we are having issues with our internet please hold on......");
+		return;	  
+                     	   }
+		}
 	
-			    }
-         }
+		}
+		System.out.println("Enter continue to see your registed info: ");
+		String response = input.nextLine();
+		while(response == continue){
+		System.out.println("Your new Naira  account is ID54671" + Math.random());  
+		System.out.println("Your new Dollar account number is ID6789" + Math.random());  
+		System.out.println("*************************\n" +
+		  "--------------------------------USER INFO\n" +
+		      "***************  First Name is: " +  firstName + "\n" +
+		                 "*************  Last Name is: " +  lastName + "\n" +
+		                        " **********  UserName is: " + userName1 + "\n" +
+		                                           "*******  Bank Pin is: " + bankPin1 + "\n" +
+				  //"******** Account Number is: " + 
+		                   "***************************************");
+			break;
+			}
+	   defual:	System.out.println("Invalid selection Exiting now as we are still working on it!!!");
+		}
+	}
+}
 
+	public static void pickOption(){
 
-
-public static void pickOption(){
-
-	String PickOptions = """
+		String PickOptions = """
 		WELCOME.....	
-	1. SIGN UP FOR AN ACCOUNT..
-	2. LOGIN TO YOUR EXISING ACCOUNT..
-	3. CLOSE ACCOUNT..
+		1. SIGN UP FOR AN ACCOUNT..
+		2. LOGIN TO YOUR EXISING ACCOUNT..
+		3. CLOSE ACCOUNT..
 		""";
-System.out.print(PickOptions);
-  }
+	System.out.print(PickOptions);
+  	}
 
 public static void accountType(){
 
@@ -141,5 +157,4 @@ System.out.println(header);
 
     
 
-  }
 }
