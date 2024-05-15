@@ -16,7 +16,7 @@ public class Account{
 	printHeader();
 	pickOption();
 	//accountType();
-	System.out.print("choose an option  ");
+	System.out.print("choose agtn option  ");
 	int bankOptions = input.nextInt();
 	System.out.println("=================");
 
@@ -36,7 +36,7 @@ public class Account{
 		userName1List.add(userName1);
 
 		System.out.println("Create your transfer pin:");
-		String  bankPin1 = input.nextLine();
+		bankPin1 = input.nextLine();
 		input.nextLine();
 		bankPin1List.add(bankPin1);
 		if(bankPin1.length() >  6 || bankPin1.length() < 6){
@@ -45,8 +45,7 @@ public class Account{
 		System.out.println("Your transfer pin was succesfully created");
 		}
 			break;
-	default:
-		System.out.print("Invalid selection Exiting now!!!");
+	default:   System.out.println("Invalid selection Exiting now!!!");
 		return;
 	
 	case 2:
@@ -67,10 +66,22 @@ public class Account{
 	                 System.out.println("You have entered an invalid Bank Pin");
 		}
 			break;
-		System.out.print("Invalid selection Exiting now!!!!");
+	default:   System.out.println("Please wait as we procces your request for you to get your account number!!!!");
 		return;
-		
-		
+	case 3: System.out.print("""
+		generateYourAccountNo:
+		1 -> Nigeria Account No.
+		2 -> Dollar Accoun No.
+			""");
+	int generateYourAccountNo = input.nextInt();
+	switch(generateYourAccountNo){
+		case 1:
+			System.out.print("Your new Nigeria  account is 54671" + Math.random());  
+		case 2:
+			System.out.print("Your new Dollar account number is 6789" + Math.random());  
+		default:
+			System.out.print("Please hold on as we are having network issue");
+			}
 
 	
 			    }
@@ -98,16 +109,7 @@ System.out.print(pickType);
 	
     }
 
-//public static void  generateAccountNumbers(){ 
-    //Random rnd = new Random();
-    //char [] digits = new char[11];
-   // digits[0] = (char) (random.nextInt(9) + '1');
-    //for(int index=1; index<digits.length; index++) {
-       // digits[index] = (char) (random.nextInt(10) + '0');
-   // }
-    //return Long.parseLong(new String(digits));
-	//}
-  //}
+
 
 public static void printHeader(){
 String header = """
