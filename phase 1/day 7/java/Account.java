@@ -11,6 +11,7 @@ public class Account{
 	ArrayList<Double> balanceList = new ArrayList<>();
 	ArrayList<String> bankPin1List = new ArrayList<>();
 	
+	
 	 String userName1 = null;
 	String bankPin1 = null;
 	printHeader();
@@ -41,11 +42,17 @@ public class Account{
 		bankPin1List.add(bankPin1);
 		if(bankPin1.length() >  6 || bankPin1.length() < 6){
 		System.out.println("Please enter a valid pin, and pin must be up to 6");
+		System.out.println("""
+		      *************** First Name is +  firstName
+		      ************* Last Name is +  lastName
+		      ********** UserName is + userName1
+		      ******* Bank Pin is + bankPin1 
+			""");
 		} else {
 		System.out.println("Your transfer pin was succesfully created");
 		}
 			break;
-	default:   System.out.println("Invalid selection Exiting now!!!");
+	default:   System.out.println("Invalid selection Exiting now as we are still working on it!!!");
 		return;
 	
 	case 2:
@@ -65,20 +72,21 @@ public class Account{
 	                  }else{
 	                 System.out.println("You have entered an invalid Bank Pin");
 		}
-			break;
-	default:   System.out.println("Please wait as we procces your request for you to get your account number!!!!");
-		return;
-	case 3: System.out.print("""
+		 System.out.println("Please wait as we procces your request for you to get your account number!!!!");
+		System.out.print("""
 		generateYourAccountNo:
 		1 -> Nigeria Account No.
-		2 -> Dollar Accoun No.
+		2 -> Dollar Accoun No. 
 			""");
 	int generateYourAccountNo = input.nextInt();
 	switch(generateYourAccountNo){
 		case 1:
-			System.out.print("Your new Nigeria  account is 54671" + Math.random());  
+			System.out.print("Your new Naira  account is ID54671" + Math.random());  
+			int nigeriaAccountNumber = input.nextInt();
+
 		case 2:
-			System.out.print("Your new Dollar account number is 6789" + Math.random());  
+			System.out.print("Your new Dollar account number is ID6789" + Math.random());  
+			int dollarAccountNumber = input.nextInt();
 		default:
 			System.out.print("Please hold on as we are having network issue");
 			}
@@ -86,7 +94,10 @@ public class Account{
 	
 			    }
          }
-  public static void pickOption(){
+
+
+
+public static void pickOption(){
 
 	String PickOptions = """
 		WELCOME.....	
@@ -95,7 +106,7 @@ public class Account{
 	3. CLOSE ACCOUNT..
 		""";
 System.out.print(PickOptions);
-}
+  }
 
 public static void accountType(){
 
@@ -110,7 +121,6 @@ System.out.print(pickType);
     }
 
 
-
 public static void printHeader(){
 String header = """
 ===========================
@@ -118,6 +128,7 @@ Smart investors Banking App
 =========================== """;
 System.out.println(header);
 
-    }
+    
 
   }
+}
