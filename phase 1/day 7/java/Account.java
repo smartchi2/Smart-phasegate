@@ -7,23 +7,22 @@ public class Account{
 	ArrayList<String> firstNameList = new ArrayList<>();
 	ArrayList<String> lastNameList = new ArrayList<>();
 	ArrayList<String> userName1List = new ArrayList<>();
-	ArrayList<String> accountTypeList = new ArrayList<>();
+	ArrayList<Double> depositList = new ArrayList<>();
 	ArrayList<Double> balanceList = new ArrayList<>();
-	ArrayList<String> bankPin1List = new ArrayList<>();
+	ArrayList<String> bankPinList = new ArrayList<>();
 	
 	
 	 String userName1 = "";
-	String bankPin1 = "";
-	String response ="";
+	String bankPin = "";
 	String Yes = "";
-	int nigeriaAccountNumber = 0;
-	int dollarAccountNumber = 0;
+	double balance = 0;
 	printHeader();
 	pickOption();
-                     
-                  //accountType();
-	System.out.print("choose an option  ");
+                 // accountManu();
+	System.out.print("choose an option..");
 	int bankOptions = input.nextInt();
+	//System.out.print("Get started..");
+	//int Manu = input.nextInt();
 	System.out.println("=".repeat(20));
           
 	
@@ -43,87 +42,78 @@ public class Account{
 		userName1List.add(userName1);
 
 		System.out.println("Create your transfer pin:");
-		bankPin1 = input.nextLine();
+		bankPin = input.nextLine();
 		input.nextLine();
-		bankPin1List.add(bankPin1);
-		while(bankPin1.length() !=  6){
+		bankPinList.add(bankPin);
+
+		while(bankPin.length() !=  6){
 		System.out.println("Please enter a valid pin, and pin must be up to 6");
 		System.out.println("Create your transfer pin:");
-		bankPin1 = input.nextLine();
+		bankPin = input.nextLine();
 			}
 		  System.out.println("Your transfer pin was succesfully created");
 		 System.out.println("=".repeat(50));
 		 System.out.println("Please wait as we procces your request for you to get your account number!!!!");
+
 		 System.out.print("""
 		 Account Number Section:
 		1 -> Nigeria Account No.
-		2 -> Dollar Accoun No. 
 			""");
 	int generateYourAccountNo = input.nextInt();
 	switch(generateYourAccountNo){
-		case 1:
-			System.out.println("Your new Naira  account is  number ID54671" + Math.random());  
-			nigeriaAccountNumber = input.nextInt();
-			
-		
-			System.out.println("Your new Dollar account number is ID6789" + Math.random());  
-			dollarAccountNumber = input.nextInt();
-	                   		break;
-		
-	case 2:
-		System.out.println("Login.... Enter Details Below:");
-		System.out.println("User Name");
-		String userName2 = input.next();
-		if(userName2 == userName1){
-		System.out.println("Hello" + userName2);
-		}else{
-		System.out.println("User not registered with us please create account");
-		}
-		System.out.print("Enter Transfer Pin:");
-		String accountPin = input.nextLine();
-		input.nextLine();
-		if(accountPin == bankPin1){
-		System.out.println("Login Successful");
-	                  }else{
-		}
-	          defualt: System.out.println("You have entered an invalid Bank Pin");
-		
-	case 3:
-		System.out.println("Are you sure you want to delete your account?:");
-		String closeAccount = input.nextLine();
-		while(closeAccount != Yes){
-		System.out.println("Are you sure you want to delete your account?:");
-		System.out.println("Account was successfully deleted");
-		//}else{
-	                   // System.out.println("You can continue using our great App");
-		break;
-		}
-		defualt: System.out.println("Seems like we are having issues with our internet please hold on......");
-		return;	  
-                     	   }
-		}
-	
-		}
-		System.out.println("Enter continue to see your registed info: ");
-		String response = input.nextLine();
-		while(response == continue){
-		System.out.println("Your new Naira  account is ID54671" + Math.random());  
-		System.out.println("Your new Dollar account number is ID6789" + Math.random());  
+	case 1:
+		System.out.println("Your new Naira  account is  number ID54671" + Math.random());  
 		System.out.println("*************************\n" +
 		  "--------------------------------USER INFO\n" +
 		      "***************  First Name is: " +  firstName + "\n" +
 		                 "*************  Last Name is: " +  lastName + "\n" +
 		                        " **********  UserName is: " + userName1 + "\n" +
-		                                           "*******  Bank Pin is: " + bankPin1 + "\n" +
-				  //"******** Account Number is: " + 
+		                                           "*******  Bank Pin is: " + bankPin + "\n" +
 		                   "***************************************");
-			break;
+		break;
+	   default:	System.out.println("Invalid selection Exiting now as we are still working on it!!!");
 			}
-	   defual:	System.out.println("Invalid selection Exiting now as we are still working on it!!!");
+		System.out.print("""
+                              	        Manu
+		1 ->Deposit money.
+		2 ->Withdraw money.
+		3 -> Check Account  balance
+		4 ->Transfer from one account to another.
+		5 -> Change Pin
+                           	    """);
+	int accountManu = input.nextInt();
+	switch(accountManu){
+	   case 1:
+		  double deposit;
+      		  System.out.println("Enter the amount you want to deposit: ");  
+      		  deposit = input.nextDouble();  
+        		  balance = balance + deposit; 
+		
+		   double withdrawal;  
+       		  System.out.println("Enter the amount you want to withdraw: ");  
+      		  withdrawal = input.nextLong();  
+       		 if (balance >= withdrawal) {  
+           		 balance = balance - withdrawal ;  
+        	                   System.out.println("Balance after withdrawal: " + balance);  
+       		 } else {  
+          		  System.out.println("Your balance is less than " + withdrawal + "\tTransaction failed...!!" );  
+          			 }  
+			break;
+   		   }   	
+    	case 3:
+		System.out.println("Are you sure you want to delete your account?:");
+		String closeAccount = input.nextLine();
+		while(closeAccount != Yes){
+		System.out.println("Are you sure you want to delete your account?:");
+		System.out.println("Account was successfully deleted");
+		if(closeAccount == Yes){
+	                   	System.out.println("You can continue using our great App");
+		break;
 		}
-	}
-}
-
+		 System.out.println("Seems like we are having issues with our internet please hold on......");	  
+                     	  	 }	
+		}
+		}
 	public static void pickOption(){
 
 		String PickOptions = """
@@ -134,27 +124,17 @@ public class Account{
 		""";
 	System.out.print(PickOptions);
   	}
-
-public static void accountType(){
-
-               String pickType = """
-	1. Savings
-	2. Corrent
-	3. Credit
-	4. Investor Account..
-	             """;
-System.out.print(pickType);
-	
-    }
-
-
+public static void deposit() {
+}
+public static void withdrawal() { 
+}
 public static void printHeader(){
 String header = """
 ===========================
 Smart investors Banking App
 =========================== """;
 System.out.println(header);
-
+}
     
 
 }
